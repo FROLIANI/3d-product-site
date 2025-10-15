@@ -134,7 +134,7 @@ export default function init3DScene() {
       camera.lookAt(0, 0, 0)
     }
 
-    new GLTFLoader().load('/images/shaker.glb', (gltf) => {
+    new GLTFLoader().load('/images/8media.glb', (gltf) => {
       model = gltf.scene
 
       model.traverse((node) => {

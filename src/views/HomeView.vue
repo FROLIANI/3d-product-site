@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
 import init3DScene from '../Utility/script.js'
+import ShowcaseView from './ShowcaseView.vue'
 
 onMounted(() => {
-  // Run after Vue has rendered all elements
   requestAnimationFrame(() => {
     init3DScene()
   })
@@ -12,13 +12,15 @@ onMounted(() => {
 
 <template>
   <main class="home-view">
-    <section class="intro">
+    <!-- <section class="intro">
       <h1>Grind doesn’t shake. It performs</h1>
-    </section>
+    </section> -->
 
     <section class="product-overview">
-      <div class="header-1"><h1>Every Rep Starts with</h1></div>
-      <div class="header-2"><h1>Grind Shaker</h1></div>
+      <div class="header-1"><h1>Transform Your Brand with
+        <img src="/images/8mediahub_logo.png" width="80" alt="Logo" />
+      </h1></div>
+      <div class="header-2"><h1>Ignite your Future</h1></div>
 
       <div class="circular-mask"></div>
 
@@ -51,8 +53,10 @@ onMounted(() => {
       <div class="modal-container"></div>
     </section>
 
-    <section class="outro">
+    <!-- <section class="outro">
       <h1>Don’t Just Train — Grind</h1>
-    </section>
+    </section> -->
+
+    <ShowcaseView />
   </main>
 </template>
