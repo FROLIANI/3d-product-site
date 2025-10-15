@@ -6,7 +6,6 @@ import { SplitText } from 'gsap/SplitText'
 import Lenis from 'lenis'
 
 export default function init3DScene() {
-  
   document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -102,9 +101,6 @@ export default function init3DScene() {
     renderer.toneMappingExposure = 1.0
     document.querySelector('.modal-container').appendChild(renderer.domElement)
 
-    // container.innerHTML = ''
-    // container.appendChild(renderer.domElement)
-
     scene.add(new THREE.AmbientLight(0xffffff, 0.7))
 
     const mainlight = new THREE.DirectionalLight(0xffffff, 1.0)
@@ -126,13 +122,13 @@ export default function init3DScene() {
       const box = new THREE.Box3().setFromObject(model)
       const center = box.getCenter(new THREE.Vector3())
 
-      model.position.set(
-        isMobile ? center.x + modelSize.x * 1 : -center.x - modelSize.x * 0.4,
-        -center.y + modelSize.y * 0.085,
-        -center.z,
+      model.position.set(-center.x - modelSize.x * 0.4, -center.y + modelSize.y * 0.05, -center.z)
+      
+      model.rotation.set(
+        THREE.MathUtils.degToRad(-25), 
+        THREE.MathUtils.degToRad(-25), 
+        0,
       )
-
-      model.rotation.y = isMobile ? 0 : THREE.MathUtils.degToRad(-25)
 
       const cameraDistance = isMobile ? 2 : 1.25
       camera.position.set(0, 0, Math.max(modelSize.x, modelSize.y, modelSize.z) * cameraDistance)
