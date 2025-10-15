@@ -6,7 +6,6 @@ import { SplitText } from 'gsap/SplitText'
 import Lenis from 'lenis'
 
 export default function init3DScene() {
-  document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger, SplitText)
 
     const lenis = new Lenis()
@@ -213,5 +212,5 @@ export default function init3DScene() {
         }
       },
     })
-  })
+  // })
 }
